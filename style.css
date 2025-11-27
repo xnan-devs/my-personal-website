@@ -1,0 +1,82 @@
+:root{
+  --site-dark-1: #08343a;
+  --site-dark-2: #0f4f57;
+  --accent: #17a2b8;
+  --accent-strong: #0dcaf0;
+  --muted-white: rgba(255,255,255,0.75);
+  --muted-white-weak: rgba(255,255,255,0.55);
+  --card-bg: #ffffff;
+}
+
+/* keep existing rules above */
+/* ...existing code... */
+
+/* unified theme overrides and component color matching */
+.site-footer { 
+  background: linear-gradient(180deg,var(--site-dark-2),var(--site-dark-1));
+}
+.site-header {
+  background: linear-gradient(180deg,var(--site-dark-2),var(--site-dark-1));
+}
+
+/* text / link colors */
+.site-footer h5,
+.site-header .navbar-brand .font-weight-bold { color: #fff; }
+.site-footer p.small,
+.site-footer .text-white-50,
+.site-header .text-white-50 { color: var(--muted-white); }
+
+.site-footer a,
+.site-header .nav-link,
+a { color: var(--link, #cfeff3); }
+.site-footer a:hover,
+.site-header .nav-link:hover { text-decoration: underline; opacity: 0.95; }
+
+/* accent usage */
+.profile-border { border-color: var(--accent); box-shadow: 0 0 10px var(--accent); }
+
+/* icon and info color */
+.text-info,
+.bi.text-info,
+i.text-info { color: var(--accent) !important; }
+
+/* buttons */
+.btn-info {
+  background-color: var(--accent) !important;
+  border-color: rgba(0,0,0,0.08) !important;
+  color: #fff !important;
+  box-shadow: none;
+}
+.btn-info:hover {
+  background-color: var(--accent-strong) !important;
+  border-color: var(--accent) !important;
+  color: #fff !important;
+}
+.btn-outline-info {
+  color: var(--accent) !important;
+  border-color: rgba(23,162,184,0.25) !important;
+}
+.btn-outline-info:hover {
+  background: rgba(23,162,184,0.08) !important;
+  color: #fff !important;
+}
+
+/* cards */
+.card { border: 1px solid rgba(0,0,0,0.04); }
+.card .card-title { color: #0b3940; }
+
+/* service icon */
+.service-icon { background: var(--accent); color: #fff; }
+
+/* small responsive tweaks to keep contrast consistent */
+@media (max-width: 575.98px) {
+  .site-footer { text-align: center; }
+  .site-footer .social { justify-content: center; display: flex; }
+  .site-header .navbar-brand .d-none.d-sm-block { display: none; }
+  .site-header .navbar-brand .d-none { display: block !important; }
+}
+
+/* enable native smooth scrolling in supporting browsers */
+html {
+  scroll-behavior: smooth;
+}
